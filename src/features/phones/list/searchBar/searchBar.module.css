@@ -1,0 +1,52 @@
+.wrapper {
+  width: 100%;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--color-base);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 0.5px solid var(--color-dark);
+  padding-bottom: 8px;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-weight: 300;
+  outline: none;
+  background: transparent;
+}
+
+.input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.input::-webkit-search-cancel-button {
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  background: url("/remove.svg") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.results {
+  line-height: 1.5;
+  font-size: 12px;
+  font-weight: 300;
+  height: 24px;
+}

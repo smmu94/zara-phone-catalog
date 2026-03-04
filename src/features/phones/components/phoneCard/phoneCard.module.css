@@ -36,7 +36,7 @@
 }
 
 .card:hover {
-  color: var(--color-light);
+  color: var(--color-base);
 }
 
 .image {
@@ -63,7 +63,7 @@
   text-transform: uppercase;
   line-height: 1.2;
   letter-spacing: 0.08em;
-  opacity: 0.6;
+  color: var(--color-brand);
 }
 
 .name {
