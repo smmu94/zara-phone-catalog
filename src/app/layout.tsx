@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+import { CartProvider } from "@/features/cart/CartContext";
+import Navbar from "@/shared/components/navbar/navbar";
 import "@/styles/globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Zara Phone Catalog",
@@ -9,7 +11,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <CartProvider>
+          <Navbar />
+          {children}
+        </CartProvider>
+      </body>
     </html>
   );
 }

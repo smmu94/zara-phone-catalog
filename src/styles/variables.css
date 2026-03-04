@@ -1,0 +1,14 @@
+:root {
+  /* Colors */
+  --color-primary: #1b1a18;
+  --color-text: #000000;
+
+  /* Typography */
+  --font-family-base: Helvetica, Arial, sans-serif;
+
+  /* Layout */
+  --header-height: 80px;
+  --padding-desktop: 100px;
+  --padding-tablet: 40px;
+  --padding-mobile: 16px;
+}

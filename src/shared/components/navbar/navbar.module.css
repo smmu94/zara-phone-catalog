@@ -1,0 +1,32 @@
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px var(--padding-mobile);
+}
+
+.cartLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.cartCount {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (min-width: 834px) {
+  .header {
+    padding: 24px var(--padding-tablet);
+  }
+}
+
+@media (min-width: 1920px) {
+  .header {
+    padding: 24px var(--padding-desktop);
+  }
+}
