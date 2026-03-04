@@ -1,7 +1,8 @@
 :root {
   /* Colors */
   --color-primary: #1b1a18;
-  --color-text: #000000;
+  --color-dark: #000000;
+  --color-light: #ffffff;
 
   /* Typography */
   --font-family-base: Helvetica, Arial, sans-serif;

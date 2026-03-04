@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px var(--padding-mobile) 0;
+}
+
+@media (min-width: 834px) {
+  .main {
+    gap: 48px;
+    padding: 48px var(--padding-tablet) 0;
+  }
+}
+
+@media (min-width: 1920px) {
+  .main {
+    padding: 48px var(--padding-desktop) 0;
+  }
+}

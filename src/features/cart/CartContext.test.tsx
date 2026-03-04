@@ -1,29 +1,7 @@
-import { CartItem, Phone } from "@/lib/types";
+import { mockCartItem, mockCartItem2 } from "@/lib/testMocks";
 import { act, renderHook } from "@testing-library/react";
 import { ReactNode } from "react";
 import { CartProvider, useCart } from "./CartContext";
-
-const mockPhone: Phone = {
-  id: "1",
-  brand: "Samsung",
-  name: "Galaxy S23",
-  basePrice: 999,
-  imageUrl: "https://example.com/phone.jpg",
-};
-
-const mockCartItem: CartItem = {
-  phone: mockPhone,
-  selectedColor: "black",
-  selectedStorage: "256GB",
-  price: 999,
-};
-
-const mockCartItem2: CartItem = {
-  phone: { ...mockPhone, id: "2", name: "Galaxy S24" },
-  selectedColor: "white",
-  selectedStorage: "512GB",
-  price: 1199,
-};
 
 describe("CartContext", () => {
   beforeEach(() => {

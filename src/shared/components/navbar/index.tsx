@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <header className={styles.header}>
-      <Link href={ROUTES.PHONES.LIST} aria-label="Go to home">
+      <Link href={ROUTES.PHONES.LIST} aria-label="Go to phones list page">
         <Image src="/logo.svg" alt="MBST" width={77} height={29} priority />
       </Link>
 

@@ -5,7 +5,7 @@ export const PRODUCTS_LIMIT = 20;
 export const ROUTES = {
   PHONES: {
     LIST: "/",
-    DETAIL: (id: string) => `/phones/${id}`,
+    DETAILS: (id: string) => `/phones/${id}`,
   },
   CART: "/cart",
 } as const;

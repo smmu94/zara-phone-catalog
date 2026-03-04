@@ -1,5 +1,5 @@
 import { CartProvider } from "@/features/cart/CartContext";
-import Navbar from "@/shared/components/navbar/navbar";
+import Navbar from "@/shared/components/navbar";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 
