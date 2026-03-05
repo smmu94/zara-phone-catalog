@@ -1,0 +1,21 @@
+.phoneDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 80px;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 834px) {
+  .phoneDetailsContainer {
+    gap: 88px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1920px) {
+  .phoneDetailsContainer {
+    padding: 110px 0;
+    gap: 154px;
+  }
+}

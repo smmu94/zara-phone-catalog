@@ -42,7 +42,7 @@ export interface PhoneDetail {
 }
 
 export interface CartItem {
-  phone: Phone
+  phone: PhoneDetail
   selectedColor: string
   selectedStorage: string
   price: number

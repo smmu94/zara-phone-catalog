@@ -1,0 +1,37 @@
+.selector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selectorLabel {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 300;
+}
+
+.storageOptions {
+  display: flex;
+}
+
+.storageBtn {
+  width: 95px;
+  padding: 16px 24px;
+  border: 0.5px solid var(--color-selector-border);
+  border-left: none;
+  background: transparent;
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 300;
+  cursor: pointer;
+  color: var(--color-dark);
+}
+
+.storageBtn:first-child {
+  border-left: 0.5px solid var(--color-selector-border);
+}
+
+.storageBtnActive {
+  border: 0.5px solid var(--color-dark) !important;
+}
