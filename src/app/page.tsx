@@ -1,4 +1,4 @@
-import SearchBar from "@/features/phones/components/searchBar";
+import SearchBar from "@/features/phones/list/searchBar";
 import PhoneGrid from "@/features/phones/list/phoneGrid";
 import { getPhones } from "@/lib/data";
 import styles from "@/styles/page.module.css";
