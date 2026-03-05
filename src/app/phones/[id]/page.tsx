@@ -1,3 +1,4 @@
+import BackButton from "@/features/phones/details/backButton";
 import { getPhoneById } from "@/lib/data";
 
 interface PhoneDetailsPageProps {
@@ -9,5 +10,9 @@ export default async function PhoneDetailsPage({ params }: PhoneDetailsPageProps
   const phone = await getPhoneById(id);
   console.log({ phone });
 
-  return <main>Phone Details Page</main>;
+  return (
+    <main>
+      <BackButton />
+    </main>
+  );
 }
