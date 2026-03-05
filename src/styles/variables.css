@@ -5,6 +5,17 @@
   --color-base: #ffffff;
   --color-placeholder: #AAAAAA;
   --color-brand: #79736D;
+  --color-selector-border: #CCCCCC;
+
+  /* Button Colors*/
+  --color-highlight-default: #1B1A18;
+  --color-highlight-hover: #282624;
+  --color-highlight-active: #363331;
+  --color-content-hover: #504D49;
+  --color-content-disabled: #C2BFBC;
+  --color-content-inverse: #FFFFFF;
+  --color-bg-disabled: #F3F2F2;
+  --color-border-disabled: #DBD9D7;
 
   /* Typography */
   --font-family-base: Helvetica, Arial, sans-serif;
