@@ -1,0 +1,90 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px var(--padding-mobile) 0;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  display: grid;
+  grid-template-areas:
+    "total total"
+    "continue pay";
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  column-gap: 12px;
+  padding: 16px var(--padding-mobile) 24px;
+}
+
+.total {
+  grid-area: total;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.continueLink {
+  grid-area: continue;
+  text-decoration: none;
+}
+
+.payBtn {
+  grid-area: pay;
+}
+
+@media (min-width: 834px) {
+  .content {
+    padding: 48px var(--padding-tablet) 0;
+    gap: 48px;
+  }
+
+  .footer {
+    grid-template-areas: "continue total pay";
+    grid-template-columns: auto 1fr 260px;
+    align-items: center;
+    padding: 24px var(--padding-tablet) 40px;
+  }
+
+  .total {
+    justify-content: flex-end;
+    gap: 24px;
+    padding-right: 48px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .content {
+    padding: 48px var(--padding-desktop) 0;
+  }
+
+  .title {
+    padding: 12px 0;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .footer {
+    padding: 24px var(--padding-desktop) 56px;
+  }
+}

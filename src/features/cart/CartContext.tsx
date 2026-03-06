@@ -5,8 +5,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 type CartContextType = {
   items: CartItem[];
-  addItem: (item: CartItem) => void;
-  removeItem: (id: string) => void;
+  addItem: (item: Omit<CartItem, "cartItemId">) => void;
+  removeItem: (cartItemId: string) => void;
   totalItems: number;
 };
 
@@ -23,12 +23,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("cart", JSON.stringify(items));
   }, [items]);
 
-  const addItem = (item: CartItem) => {
-    setItems((prev) => [...prev, item]);
+  const addItem = (item: Omit<CartItem, "cartItemId">) => {
+    const cartItemId = `${item.phone.id}-${item.selectedStorage}-${item.selectedColor}-${Date.now()}`;
+    setItems((prev) => [...prev, { ...item, cartItemId }]);
   };
 
-  const removeItem = (id: string) => {
-    setItems((prev) => prev.filter((item) => item.phone.id !== id));
+  const removeItem = (cartItemId: string) => {
+    setItems((prev) => prev.filter((item) => item.cartItemId !== cartItemId));
   };
 
   return (
