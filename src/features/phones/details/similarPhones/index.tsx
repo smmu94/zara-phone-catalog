@@ -70,8 +70,8 @@ export default function SimilarPhones({ phones }: SimilarPhonesProps) {
         onClick={handleClick}
         onScroll={handleScroll}
       >
-        {phones.map((phone) => (
-          <div key={phone.id} className={styles.item}>
+        {phones.map((phone, index) => (
+          <div key={`${phone.id}-${index}`} className={styles.item}>
             <PhoneCard phone={phone} />
           </div>
         ))}
