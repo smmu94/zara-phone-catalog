@@ -1,13 +1,13 @@
 import SearchBar from "@/features/phones/list/searchBar";
 import PhoneGrid from "@/features/phones/list/phoneGrid";
 import { getPhones } from "@/lib/data";
-import styles from "@/styles/page.module.css";
+import styles from "@/styles/phoneListPage.module.css";
 
-interface HomePageProps {
+interface PhoneListPageProps {
   searchParams: Promise<{ search?: string }>;
 }
 
-export default async function PhoneListPage({ searchParams }: HomePageProps) {
+export default async function PhoneListPage({ searchParams }: PhoneListPageProps) {
   const { search } = await searchParams;
   const phones = await getPhones(search);
   return (

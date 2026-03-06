@@ -11,7 +11,7 @@ export default function PhoneGrid({ phones }: PhoneGridProps) {
     <ul className={styles.grid}>
       {phones.map((phone, index) => (
         <li key={`${phone.id}-${index}`}>
-          <PhoneCard phone={phone} />
+          <PhoneCard key={phone.id} phone={phone} priority={index < 4} />
         </li>
       ))}
     </ul>

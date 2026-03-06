@@ -25,7 +25,7 @@ export default function CartPage() {
         </ul>
       </div>
 
-      <footer className={styles.footer}>
+      <footer className={`${styles.footer} ${isEmpty ? styles.footerEmpty : ""}`}>
         <Link href={ROUTES.PHONES.LIST} className={styles.continueLink}>
           <Button variant="standard">CONTINUE SHOPPING</Button>
         </Link>

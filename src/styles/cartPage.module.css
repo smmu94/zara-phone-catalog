@@ -35,6 +35,11 @@
   padding: 16px var(--padding-mobile) 24px;
 }
 
+.footerEmpty {
+  grid-template-areas: "continue";
+  grid-template-columns: 1fr;
+}
+
 .total {
   grid-area: total;
   display: flex;

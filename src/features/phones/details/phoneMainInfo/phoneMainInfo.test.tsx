@@ -1,14 +1,30 @@
 import { CartProvider } from "@/features/cart/CartContext";
+import { ROUTES } from "@/lib/constants";
 import { mockPhoneDetail } from "@/lib/testMocks";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { useRouter } from "next/navigation";
 import PhoneMainInfo from "./index";
+
+jest.mock("next/navigation", () => ({
+  useRouter: jest.fn(),
+}));
 
 const renderWithContext = (component: React.ReactElement) => {
   return render(<CartProvider>{component}</CartProvider>);
 };
 
 describe("PhoneMainInfo Component", () => {
+  const mockPush = jest.fn();
+
+  beforeEach(() => {
+    (useRouter as jest.Mock).mockReturnValue({ push: mockPush });
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should render phone name and base price", () => {
     renderWithContext(<PhoneMainInfo phone={mockPhoneDetail} />);
 
@@ -103,5 +119,23 @@ describe("PhoneMainInfo Component", () => {
     await user.click(addButton);
 
     expect(addButton).not.toBeDisabled();
+  });
+
+  it("should call addItem and navigate to cart when Add button is clicked with selections", async () => {
+    renderWithContext(<PhoneMainInfo phone={mockPhoneDetail} />);
+
+    const colorButton = screen.getByLabelText(mockPhoneDetail.colorOptions[0].name);
+    const storageButton = screen.getByRole("button", {
+      name: mockPhoneDetail.storageOptions[0].capacity,
+    });
+    const addButton = screen.getByRole("button", { name: /AÑADIR/i });
+
+    const user = userEvent.setup();
+    await user.click(colorButton);
+    await user.click(storageButton);
+    await user.click(addButton);
+
+    expect(addButton).not.toBeDisabled();
+    expect(mockPush).toHaveBeenCalledWith(ROUTES.CART);
   });
 });

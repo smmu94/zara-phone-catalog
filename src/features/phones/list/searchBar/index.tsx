@@ -26,7 +26,9 @@ export default function SearchBar({ totalResults }: SearchBarProps) {
 
   return (
     <div className={styles.wrapper}>
-      <label htmlFor="phone-search" aria-label="Search for a smartphone" />
+      <label htmlFor="phone-search" className={styles.srOnly}>
+        Search for a smartphone
+      </label>
       <input
         id="phone-search"
         type="search"

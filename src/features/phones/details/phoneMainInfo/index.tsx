@@ -1,13 +1,15 @@
 "use client";
 
 import { useCart } from "@/features/cart/CartContext";
+import { ROUTES } from "@/lib/constants";
 import { ColorOption, PhoneDetail, StorageOption } from "@/lib/types";
 import Button from "@/shared/components/button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ColorSelector from "./components/colorSelector";
-import styles from "./phoneMainInfo.module.css";
 import StorageSelector from "./components/storageSelector";
+import styles from "./phoneMainInfo.module.css";
 
 interface PhoneMainInfoProps {
   phone: PhoneDetail;
@@ -17,6 +19,7 @@ export default function PhoneMainInfo({ phone }: PhoneMainInfoProps) {
   const [selectedColor, setSelectedColor] = useState<ColorOption | null>(null);
   const [selectedStorage, setSelectedStorage] = useState<StorageOption | null>(null);
   const { addItem } = useCart();
+  const router = useRouter();
 
   const currentImage = selectedColor?.imageUrl ?? phone.colorOptions[0]?.imageUrl;
   const currentPrice = selectedStorage?.price ?? phone.basePrice;
@@ -30,6 +33,7 @@ export default function PhoneMainInfo({ phone }: PhoneMainInfoProps) {
       selectedStorage: selectedStorage.capacity,
       price: selectedStorage.price,
     });
+    router.push(ROUTES.CART);
   };
 
   return (
