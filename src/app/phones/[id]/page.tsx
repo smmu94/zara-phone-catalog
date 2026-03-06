@@ -1,5 +1,6 @@
 import BackButton from "@/features/phones/details/backButton";
 import PhoneMainInfo from "@/features/phones/details/phoneMainInfo";
+import PhoneSpecs from "@/features/phones/details/phoneSpecs";
 import { getPhoneById } from "@/lib/data";
 import styles from "@/styles/phoneDetailsPage.module.css";
 
@@ -16,6 +17,7 @@ export default async function PhoneDetailsPage({ params }: PhoneDetailsPageProps
       <BackButton />
       <div className={styles.phoneDetailsContainer}>
         <PhoneMainInfo phone={phone} />
+        <PhoneSpecs phone={{ ...phone, ...phone.specs }} />
       </div>
     </main>
   );
