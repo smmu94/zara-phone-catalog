@@ -1,0 +1,90 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 300;
+  padding-left: var(--padding-mobile);
+}
+
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  padding: 0 var(--padding-mobile) 8px;
+  cursor: grab;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.dragging {
+  cursor: grabbing;
+}
+
+.dragging * {
+  pointer-events: none;
+}
+
+.item {
+  flex-shrink: 0;
+}
+
+.scrollbarTrack {
+  height: 1px;
+  background: #cccccc;
+  margin: 0 var(--padding-mobile);
+  position: relative;
+}
+
+.scrollbarThumb {
+  position: absolute;
+  height: 1px;
+  background: var(--color-dark);
+  width: 30%;
+  transition: left 0.1s;
+}
+
+@media (min-width: 834px) {
+  .title,
+  .carousel {
+    padding-left: calc((100vw - 754px) / 2);
+  }
+
+  .carousel {
+    padding-right: calc((100vw - 754px) / 2);
+  }
+
+  .title {
+    padding-right: 0;
+  }
+
+  .scrollbarTrack {
+    margin: 0 calc((100vw - 754px) / 2);
+  }
+}
+
+@media (min-width: 1920px) {
+  .wrapper {
+    padding-bottom: 104px;
+  }
+
+  .title,
+  .carousel {
+    padding-left: calc((100vw - 1200px) / 2);
+  }
+
+  .carousel {
+    padding-right: calc((100vw - 1200px) / 2);
+  }
+
+  .scrollbarTrack {
+    margin: 0 calc((100vw - 1200px) / 2);
+  }
+}

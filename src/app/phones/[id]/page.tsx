@@ -1,6 +1,7 @@
 import BackButton from "@/features/phones/details/backButton";
 import PhoneMainInfo from "@/features/phones/details/phoneMainInfo";
 import PhoneSpecs from "@/features/phones/details/phoneSpecs";
+import SimilarPhones from "@/features/phones/details/similarPhones";
 import { getPhoneById } from "@/lib/data";
 import styles from "@/styles/phoneDetailsPage.module.css";
 
@@ -19,6 +20,7 @@ export default async function PhoneDetailsPage({ params }: PhoneDetailsPageProps
         <PhoneMainInfo phone={phone} />
         <PhoneSpecs phone={{ ...phone, ...phone.specs }} />
       </div>
+      <SimilarPhones phones={phone.similarProducts} />
     </main>
   );
 }
