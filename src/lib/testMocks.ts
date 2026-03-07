@@ -72,6 +72,7 @@ export const mockPhoneDetail: PhoneDetail = {
 /* CART MOCKS */
 
 export const mockCartItem: CartItem = {
+  cartItemId: "1",
   phone: mockPhoneDetail,
   selectedColor: "black",
   selectedStorage: "256GB",
@@ -79,6 +80,7 @@ export const mockCartItem: CartItem = {
 };
 
 export const mockCartItem2: CartItem = {
+  cartItemId: "2",
   phone: { ...mockPhoneDetail, id: "2", name: "Galaxy S24" },
   selectedColor: "white",
   selectedStorage: "512GB",
