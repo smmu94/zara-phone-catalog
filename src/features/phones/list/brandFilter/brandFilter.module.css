@@ -7,8 +7,9 @@
 
 .chip {
   padding: 6px 16px;
-  border: 0.5px solid var(--color-dark);
+  border: 0.5px solid var(--brand-color, var(--color-dark));
   background: transparent;
+  color: var(--brand-color, var(--color-dark));
   font-family: var(--font-family-base);
   font-size: 12px;
   font-weight: 300;
@@ -19,11 +20,11 @@
 }
 
 .chip:hover {
-  background: var(--color-dark);
+  background: var(--brand-color, var(--color-dark));
   color: var(--color-base);
 }
 
 .chip.active {
-  background: var(--color-dark);
+  background: var(--brand-color, var(--color-dark));
   color: var(--color-base);
 }
